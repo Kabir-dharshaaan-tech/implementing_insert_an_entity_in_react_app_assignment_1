@@ -1,9 +1,14 @@
-const BookCard = ({ title, author, description }) => {
+import "./BookCard.css"; 
+
+const BookCard = ({ title, author, description, coverImage }) => {
   return (
-    <div className="border p-4 rounded shadow">
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="text-sm text-gray-600">by {author}</p>
-      <p className="text-gray-800 mt-2">{description}</p>
+    <div className="book-card">
+      <img src={coverImage} alt={title} className="book-cover" />
+      <div className="book-details">
+        <h3 className="book-title">{title}</h3>
+        <p className="book-author">by {author}</p>
+        <p className="book-description">{description}</p>
+      </div>
     </div>
   );
 };
